@@ -1,0 +1,481 @@
+/* style.css - Contains all styles for Welcome, Discovery, and Details screens */
+
+/* General Body and Container Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif; /* Use a suitable dark theme font */
+    background-color: #121212; /* Base dark background */
+    color: #ffffff; /* Default text color */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    padding: 0; /* Ensure no default padding */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 100vh; /* Minimum height of viewport */
+}
+
+/* Main app container simulating a phone screen */
+.app-container {
+    width: 100%;
+    max-width: 400px; /* Simulate phone width */
+    height: 95vh; /* Make container fill most of viewport height */
+    background-color: #121212; /* Dark background */
+    border-radius: 30px; /* Adjust as needed */
+    overflow: hidden; /* Ensures content inside is clipped by rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Optional shadow */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+}
+
+/* --- Welcome Screen Styles --- */
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Align items to the bottom */
+    align-items: center;
+    text-align: center;
+    height: 100%; /* Fill parent height */
+    padding: 20px;
+    box-sizing: border-box;
+    /* Background: Use a dark gradient for mockup */
+    background: linear-gradient(to bottom, #0a192f, #102a43);
+    color: #e0e0e0;
+}
+
+.welcome-slogan {
+    font-size: 1.8em;
+    margin-bottom: 40px;
+    line-height: 1.5;
+    color: #64ffda; /* Cyan color for highlight */
+}
+
+.next-button {
+    padding: 15px 30px;
+    background: linear-gradient(to right, #64ffda, #483d8b); /* Gradient matching scenic graphic style */
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-size: 1.1em;
+    cursor: pointer;
+    margin-bottom: 40px; /* Space from bottom */
+    /* Representing the embedded scenic graphic visually */
+    background-size: 200% auto;
+    background-position: right center;
+    transition: background-position 0.5s ease;
+}
+
+.next-button:hover {
+     background-position: left center; /* Simple hover effect */
+}
+
+/* Placeholder for the main graphic above the text */
+.welcome-graphic-placeholder {
+    flex-grow: 1; /* Takes up available space pushing content down */
+    width: 100%;
+    /* This is where your detailed background image would go */
+    /* For this mockup, we'll just have a dark space */
+ }
+
+/* --- Discovery Screen Styles --- */
+.discovery-container {
+    display: flex; /* Use flexbox for main layout */
+    height: 100%; /* Fill parent height */
+     /* Specific background for the discovery container */
+    background-color: #121212;
+}
+
+.main-content {
+    flex-grow: 1; /* Takes up most space */
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Enable scrolling for app cards */
+     /* Hide scrollbar */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.main-content::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.header-area {
+    padding: 20px;
+    padding-bottom: 0; /* Adjust padding */
+    /* Background: Where the scenic banner image would be */
+    background: url('placeholder-banner.png') no-repeat center bottom; /* Replace with your banner image */
+    background-size: cover; /* Cover the area */
+    min-height: 200px; /* Adjust height as needed for the banner */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Push content to the bottom */
+    position: relative; /* Needed for text positioning */
+}
+
+/* Placeholder background using gradient if no image */
+.header-area::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(100, 255, 218, 0.2), rgba(10, 25, 47, 0.8)); /* Example gradient overlay */
+    z-index: 0;
+}
+.header-area > * {
+    position: relative; /* Bring content above pseudo-element */
+    z-index: 1;
+}
+
+
+.header-text {
+    font-size: 2em;
+    line-height: 1.2;
+    margin: 0 0 20px 0;
+    color: white; /* Text color over the banner */
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Optional text shadow */
+}
+
+.app-list {
+    padding: 20px;
+    padding-top: 0; /* Adjust padding */
+}
+
+.app-card {
+    background-color: #1e1e1e; /* Dark background for cards */
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    color: #e0e0e0; /* Light text in card */
+    cursor: pointer; /* Indicate it's clickable */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
+}
+
+.app-card:hover {
+    transform: translateY(-3px); /* Lift slightly on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+
+.app-card .app-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #483d8b; /* Placeholder icon color */
+    border-radius: 10px; /* Slightly rounded icon */
+    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em; /* Placeholder content */
+    color: white;
+    flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.app-card .app-info {
+    flex-grow: 1;
+}
+
+.app-card .app-name {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+     color: #64ffda; /* Highlight color for app name */
+}
+
+.app-card .app-subtitle {
+    font-size: 0.9em;
+    color: #a0a0a0; /* Muted color for subtitle */
+    margin: 0;
+}
+
+.sidebar {
+    width: 60px; /* Width of the sidebar */
+    background-color: #000000; /* Black sidebar background */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Distribute items vertically */
+    align-items: center;
+    padding: 20px 0;
+    flex-shrink: 0; /* Prevent sidebar from shrinking */
+}
+
+.sidebar-item {
+    font-size: 0.9em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #a0a0a0; /* Muted color for categories */
+    writing-mode: vertical-rl; /* Vertical text */
+    transform: rotate(180deg); /* Rotate text */
+    margin: 10px 0; /* Vertical spacing */
+    cursor: pointer;
+    transition: color 0.3s ease;
+    user-select: none; /* Prevent text selection */
+}
+
+.sidebar-item:hover {
+    color: #64ffda; /* Highlight on hover */
+}
+ .sidebar-item.active {
+     color: white; /* Active category color */
+ }
+
+ .sidebar-item.search {
+      color: #64ffda; /* Specific styling for the search label */
+ }
+
+/* --- App Details Screen Styles --- */
+.detail-header {
+    /* Placeholder for the large banner image */
+    height: 250px; /* Adjust height as needed */
+    background: url('placeholder-app-banner.jpg') no-repeat center center; /* Replace with your app banner image */
+    background-size: cover;
+    position: relative; /* Needed for overlay/content positioning */
+    flex-shrink: 0; /* Prevent header from shrinking */
+}
+
+/* Optional dark gradient overlay on header for text readability */
+.detail-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)); /* Dark gradient */
+    z-index: 0;
+}
+
+.header-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    z-index: 1; /* Ensure content is above overlay */
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.app-title {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+}
+
+.app-subtitle {
+    font-size: 1em;
+    color: #a0a0a0; /* Muted color */
+    margin: 0 0 10px 0;
+}
+
+.app-rating {
+    font-size: 0.9em;
+    color: #ffc107; /* Star color */
+}
+
+.detail-tabs {
+    display: flex;
+    justify-content: space-around;
+    background-color: #1e1e1e; /* Darker background for tabs */
+    padding: 15px 0;
+    margin-top: -1px; /* Overlap slightly with header border */
+    border-bottom: 1px solid #333;
+    flex-shrink: 0; /* Prevent tabs from shrinking */
+}
+
+.tab-item {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 1em;
+    color: #a0a0a0;
+    text-decoration: none;
+    padding: 5px 0;
+    position: relative;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    user-select: none; /* Prevent text selection */
+}
+
+.tab-item:hover,
+.tab-item.active {
+    color: #64ffda; /* Highlight color */
+}
+
+.tab-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: -15px; /* Position below the text/padding */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px; /* Underline width */
+    height: 3px;
+    background-color: #64ffda; /* Highlight color */
+    border-radius: 2px;
+}
+
+
+.detail-scroll-content {
+    flex-grow: 1; /* Takes up remaining space */
+    overflow-y: auto; /* Enable vertical scrolling for the content area */
+    padding: 20px;
+     /* Hide scrollbar */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.detail-scroll-content::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+
+.detail-section {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.app-description {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Responsive grid */
+    gap: 15px;
+}
+
+.feature-card {
+    background-color: #1e1e1e; /* Dark card background */
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #e0e0e0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    user-select: none; /* Prevent text selection */
+}
+
+.feature-card .icon {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #64ffda; /* Highlight color for icons */
+}
+
+.feature-card .text {
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.gallery-scroll {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    gap: 15px;
+    padding-bottom: 10px; /* Add padding for scrollbar area */
+    /* Hide scrollbar */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.gallery-scroll::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.screenshot {
+    width: 250px; /* Adjust screenshot width */
+    height: 180px; /* Adjust screenshot height */
+    background-color: #333; /* Placeholder background */
+    border-radius: 10px;
+    flex-shrink: 0; /* Prevent shrinking */
+    object-fit: cover; /* Ensure image covers the area */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Styles for the bottom info/compatibility section */
+.compatibility-info .info-text {
+     font-size: 0.9em;
+     color: #a0a0a0;
+     margin-bottom: 5px;
+}
+
+
+.detail-footer {
+    background-color: #1e1e1e; /* Darker background for footer */
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #333;
+    flex-shrink: 0; /* Prevent footer from shrinking */
+}
+
+.footer-info {
+    display: flex;
+    flex-direction: column;
+     color: #e0e0e0;
+}
+
+.footer-info .size,
+.footer-info .compat {
+    font-size: 0.9em;
+    color: #a0a0a0;
+    margin: 0; /* Remove default margins */
+}
+
+
+.install-button {
+    padding: 12px 25px;
+    background: linear-gradient(to right, #64ffda, #483d8b); /* Gradient button */
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.install-button:hover {
+    opacity: 0.9;
+}
+
+/* --- Basic Loading Screen Styles (Visual only, not a real loading screen) --- */
+/* This isn't a separate page in this 3-file setup, but styles are kept if you add one */
+/*
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #000;
+    color: #ffc107;
+}
+
+.loading-spinner {
+    border: 5px solid #333;
+    border-top: 5px solid #ffc107;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+    font-size: 1.2em;
+}
+*/
