@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Details - Nebula Viewer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main app container simulating a phone screen -->
+    <div class="app-container">
+        <!-- Content for the App Details screen -->
+
+        <!-- Header Area -->
+        <div class="detail-header">
+            <!-- Background image is set via CSS: .detail-header -->
+            <div class="header-content">
+                <h1 class="app-title">Nebula Viewer</h1>
+                <p class="app-subtitle">By Digital Explorers</p>
+                <p class="app-rating">⭐ 4.9 (1,200 reviews)</p>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="detail-tabs">
+            <a href="#" class="tab-item active">Details</a>
+            <a href="#" class="tab-item">Reviews</a>
+            <a href="#" class="tab-item">Screenshots</a>
+        </div>
+
+        <!-- Scrollable Content Area -->
+        <div class="detail-scroll-content">
+
+            <!-- About Section -->
+            <div class="detail-section">
+                <h2 class="section-title">About App</h2>
+                <p class="app-description">
+                    Dive deep into the cosmos with Nebula Viewer. Explore stunning high-resolution images of galaxies, nebulae, and star clusters from telescopes around the world. Features include daily astronomy picture updates, interactive star maps, and the ability to save your favorite celestial objects. Perfect for astronomers, students, and anyone who loves the wonders of the universe.
+                </p>
+            </div>
+
+            <!-- Features Section (Based on Highlights) -->
+            <div class="detail-section">
+                <h2 class="section-title">Key Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="icon">✨</div>
+                        <div class="text">Daily Updates</div>
+                    </div>
+                    <div class="feature-card">
+                         <div class="icon">🗺️</div>
+                        <div class="text">Star Maps</div>
+                    </div>
+                    <div class="feature-card">
+                         <div class="icon">💾</div>
+                        <div class="text">Save Favorites</div>
+                    </div>
+                    <div class="feature-card">
+                         <div class="icon">📡</div>
+                        <div class="text">Telescope Feed</div>
+                    </div>
+                     <div class="feature-card">
+                         <div class="icon">🖼️</div>
+                        <div class="text">HD Images</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Screenshots Section (Based on Gallery) -->
+            <div class="detail-section">
+                <h2 class="section-title">Screenshots & Video</h2>
+                <div class="gallery-scroll">
+                    <!-- Placeholder screenshots - replace with actual image paths -->
+                    <img src="placeholder-screenshot1.jpg" alt="Screenshot 1" class="screenshot">
+                    <img src="placeholder-screenshot2.jpg" alt="Screenshot 2" class="screenshot">
+                    <img src="placeholder-screenshot3.jpg" alt="Screenshot 3" class="screenshot">
+                     <img src="placeholder-screenshot4.jpg" alt="Screenshot 4" class="screenshot">
+                    <!-- Add more screenshot images here -->
+                </div>
+                 <p class="app-subtitle" style="margin-top: 15px; text-align: right;"><a href="#" style="color: #64ffda; text-decoration: none;">See All</a></p> <!-- See All link -->
+            </div>
+
+             <!-- Compatibility/Info Section (Based on Location) -->
+            <div class="detail-section compatibility-info">
+                 <h2 class="section-title">Info</h2>
+                 <p class="info-text">Version: 1.5.0</p>
+                 <p class="info-text">Size: 120 MB</p>
+                 <p class="info-text">Requires: Android 8.0+ or iOS 13.0+</p>
+            </div>
+
+        </div> <!-- End of Scrollable Content -->
+
+        <!-- Sticky Footer -->
+        <div class="detail-footer">
+            <div class="footer-info">
+                <span class="size">120 MB</span>
+                <span class="compat">Android 8.0+</span>
+            </div>
+            <button class="install-button" id="installButton">
+                Install
+            </button>
+        </div>
+
+    </div> <!-- End of .app-container -->
+    <script src="script.js"></script>
+</body>
+</html>
